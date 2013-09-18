@@ -12,28 +12,30 @@ float getOilChanges();
 float getMaintenance();
 void displayTotals();
 
+//main function
 int main()
 
 	{
 	
-		getLoanPayment();
 		displayTotals();
 
 
 		getch();
 		return 0;
 	}
-	
+
+//get loan payments	
 float getLoanPayment()
 
 	{
-		int payment; 
+		float payment; 
 		printf("Enter your monthly auto loan payment");
-		scanf("%lf",&payment);
+		scanf("%f",&payment);
 		
 		return(payment);
 	}
 
+//get insurance payments
 float getInsurancePayment()
 
 	{
@@ -45,10 +47,11 @@ float getInsurancePayment()
 		printf("How many times a year do you pay?");
 		scanf("%f",&frequency);
 				
-		return(insurance/frequency/12);
+		return(insurance*frequency/12.0);
 		
 	}
-	
+
+//get monthly gas cost	
 float getGas()
 
 	{
@@ -56,19 +59,62 @@ float getGas()
 		float gas, perWeek;
 		
 		printf("Enter your average fuel fill up cost");
-		scanf("%f", gas);
+		scanf("%f",&gas);
 		printf("How often do you fill up per week?");
-		scanf("%f", perWeek);
+		scanf("%f",&perWeek);
 		
-		return(gas*perWeek*52/12);
+		return(gas*perWeek*52/12.0);
 		
 	}
-		
-	
-void displayTotals()
+
+//get monthly oil cost	
+float getOilChanges()
 
 	{
 	
-		printf("Your yearly loan amount is $ %.2f", getLoanPayment()*12);
+		float oilCost;
+		int	frequency;
+		printf("What is your average oil change cost?");
+		scanf("%f",&oilCost);
+		printf("How many times a year do you change your oil?");
+		scanf("%d",&frequency);
 		
+		return((oilCost*frequency)/12.0);
+		
+	}
+
+//get monthly maintenance cost		
+float getMaintenance()
+
+	{
+	
+		float maintenance;
+		printf("Enter your average yearly maintenance cost");
+		scanf("%f",&maintenance);
+		
+		return(maintenance/12.0);
+		
+	}
+
+//display output	
+void displayTotals()
+
+	{
+		//declare vars
+		float loan, insurance, gas, oil, maintenance;
+		
+		//get var values from other functions
+		loan=getLoanPayment();
+		insurance=getInsurancePayment();
+		gas=getGas();
+		oil=getOilChanges();
+		maintenance=getMaintenance();
+		
+		//output
+        printf("\nYour loan cost is %.2f monthly and %.2f yearly", loan,loan*12);
+        printf("\nYour insurance cost is %.2f monthly and %.2f yearly", insurance,insurance*12);
+		printf("\nYour fuel cost is %.2f monthly and %.2f yearly", gas,gas*12);
+		printf("\nYour oil cost is %.2f monthly and %.2f yearly", oil,oil*12);
+		printf("\nYour maintenance cost is %.2f monthly and %.2f yearly", maintenance,maintenance*12);
+		printf("\nYour total cost of ownership is %.2f monthly and %.2lf yearly", loan+insurance+gas+oil+maintenance, (loan+insurance+gas+oil+maintenance)*12); 
 	}
