@@ -10,6 +10,7 @@ float getInsurancePayment();
 float getGas();
 float getOilChanges();
 float getMaintenance();
+unsigned int getMiles();
 void displayTotals();
 
 //main function
@@ -95,6 +96,16 @@ float getMaintenance()
 		return(maintenance/12.0);
 		
 	}
+//get miles driven
+unsigned int getMiles()
+	{
+		unsigned int miles;
+		printf("How many miles do you drive per year?");
+		scanf("%ld",&miles);
+		
+		return(miles);
+		
+	}
 
 //display output	
 void displayTotals()
@@ -102,6 +113,7 @@ void displayTotals()
 	{
 		//declare vars
 		float loan, insurance, gas, oil, maintenance;
+		unsigned int miles;
 		
 		//get var values from other functions
 		loan=getLoanPayment();
@@ -109,6 +121,7 @@ void displayTotals()
 		gas=getGas();
 		oil=getOilChanges();
 		maintenance=getMaintenance();
+		miles=getMiles();
 		
 		//output
         printf("\nYour loan cost is %.2f monthly and %.2f yearly", loan,loan*12);
@@ -116,5 +129,6 @@ void displayTotals()
 		printf("\nYour fuel cost is %.2f monthly and %.2f yearly", gas,gas*12);
 		printf("\nYour oil cost is %.2f monthly and %.2f yearly", oil,oil*12);
 		printf("\nYour maintenance cost is %.2f monthly and %.2f yearly", maintenance,maintenance*12);
+		printf("\nYour cost per mile is $%.2f", ((loan+insurance+gas+oil+maintenance)*12.0)/miles);
 		printf("\nYour total cost of ownership is %.2f monthly and %.2lf yearly", loan+insurance+gas+oil+maintenance, (loan+insurance+gas+oil+maintenance)*12); 
 	}
