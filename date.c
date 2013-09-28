@@ -16,7 +16,6 @@ int main()
 		scanf("%d/%d/%d, &month, &day, &year);
 		
 		displayDate();
-	
 		
 		return 0;
 	}
@@ -49,8 +48,5 @@ void displayDate()
 				dDay=day;
 			break:
 			}
-			
-			
-			
 		
 				
