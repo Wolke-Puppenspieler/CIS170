@@ -5,8 +5,9 @@ CIS170 Section 01
 
 #include<stdio.h>
 
-int isLeap();
-void displayDate(int,int);
+int isLeap(int);
+int date(int,int);
+void displayDate(int,int,int);
 
 
 int main()
@@ -15,7 +16,7 @@ int main()
 		printf("Enter date in following format: mm/dd/yyyy");
 		scanf("%d/%d/%d",&month,&day,&year);
 		
-		displayDate(day,month);
+		displayDate(day,month,year);
 		
 		getch();
 		return 0;
@@ -36,19 +37,24 @@ int isLeap(year)
 		return(leap);
 	}
 	
-void displayDate(day, month)
+int date(day,year)
 	{
-		int dDay;
-		if(day>59&&isLeap()==1)
-		switch(isLeap())
+		if(day>59&&isLeap(year)==1)
 			{
-			case 1:
-				dDay=day+1;
-			break;
-			case 0:
-				dDay=day;
-			break;
+				printf(" %d,",day+1);
 			}
+		    else
+			{
+				printf(" %d,",day);
+			}
+	}
+	
+void displayDate(day, month, year)
+	{
+		
+		printf("Your date, ");
+		
+		
 			
 		switch(month)
 			{
@@ -89,6 +95,8 @@ void displayDate(day, month)
 				printf("December");
 			break;
 			}
+			
+			printf("%d is day number %d",year,date(day,year));
 			
       }
 			
