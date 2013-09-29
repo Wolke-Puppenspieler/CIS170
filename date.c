@@ -36,19 +36,7 @@ int isLeap(year)
 			
 		return(leap);
 	}
-	
-int date(day,year)
-	{
-		if(day>59&&isLeap(year)==1)
-			{
-				printf(" %d,",day+1);
-			}
-		    else
-			{
-				printf(" %d,",day);
-			}
-	}
-	
+		
 void displayDate(day, month, year)
 	{
 		
@@ -59,44 +47,54 @@ void displayDate(day, month, year)
 		switch(month)
 			{
 			case 1:
-				printf("January");
+				printf("January  %d, %d, ", day,year);
+				printf(" is day number %d", day);
 			break;
 			case 2:
-				printf("February");
+				printf("February %d, %d, ", day,year);
+				printf(" is day number %d", day+31+isLeap(year));
 			break;
 			case 3:
-				printf("March");
+				printf("March %d, %d, ", day,year);
+				printf(" is day number %d", day+59+isLeap(year));
 			break;
 			case 4:
-				printf("April");
+				printf("April %d, %d, ", day,year);
+				printf(" is day number %d", day+90+isLeap(year));
 			break;
 			case 5:
-				printf("May");
+				printf("May %d, %d, ", day,year);
+				printf(" is day number %d", day+120+isLeap(year));
 			break;
 			case 6:
-				printf("June");
+				printf("June %d, %d, ", day,year);
+				printf(" is day number %d", day+151+isLeap(year));
 			break;
 			case 7:
-				printf("July");
+				printf("July %d, %d, ", day,year);
+				printf(" is day number %d", day+181+isLeap(year));
 			break;
 			case 8:
-				printf("August");
+				printf("August %d, %d, ", day,year);
+				printf(" is day number %d", day+212+isLeap(year));
 			break;
 			case 9:
-				printf("September");
+				printf("September %d, %d, ", day,year);
+				printf(" is day number %d", day+243+isLeap(year));
 			break;
 			case 10:
-				printf("October");
+				printf("October %d, %d, ", day,year);
+				printf(" is day number %d", day+273+isLeap(year));
 			break;
 			case 11:
-				printf("November");
+				printf("November %d, %d, ", day,year);
+				printf(" is day number %d", day+304+isLeap(year));
 			break;
 			case 12:
-				printf("December");
+				printf("December %d, %d, ", day,year);
+				printf(" is day number %d", day+334+isLeap(year));
 			break;
 			}
-			
-			printf("%d is day number %d",year,date(day,year));
 			
       }
 			
