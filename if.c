@@ -20,7 +20,11 @@ int main()
 			{
 				printf("The cost to ship your package is $ %.2f", weight*2.20);
 			}
+<<<<<<< HEAD
 			else if(weight>2.0 && weight<=10.0)
+=======
+			else if(weight<=10.0)
+>>>>>>> refs/heads/ugh
 				{
 					printf("the cost to ship your package is $ %.2f", weight*3.70);
 				}
