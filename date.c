@@ -3,25 +3,30 @@ CIS170 Section 01
 9/25/2013
 */
 
+//include standard io operations
 #include<stdio.h>
 
+//function prototypes
 int isLeap(int);
-int date(int,int);
 void displayDate(int,int,int);
 
-
+//main function
 int main()
 	{
+		//define vars
 		int month, day, year;
+		
+		//get usr input
 		printf("Enter date in following format: mm/dd/yyyy");
 		scanf("%d/%d/%d",&month,&day,&year);
 		
+		//call displayDate function
 		displayDate(day,month,year);
 		
 		getch();
 		return 0;
 	}
-
+//calculate leap year yes/no
 int isLeap(year)
 	{
 		int leap;
@@ -36,14 +41,14 @@ int isLeap(year)
 			
 		return(leap);
 	}
-		
+//display output		
 void displayDate(day, month, year)
 	{
 		
 		printf("Your date, ");
 		
 		
-			
+		//calculate month name from # entered, enumerate day value, and output that info	
 		switch(month)
 			{
 			case 1:
