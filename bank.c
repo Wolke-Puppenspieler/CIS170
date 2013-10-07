@@ -3,42 +3,46 @@ CIS170 Section 01
 Bank Program*/
 
 #include<stdio.h>
+#include <conio2.h>
+#include <conio.h>
 
 void displayMenu();
-double getBalance(double );
+void getBalance(double );
 double getWithdrawal(double );
 double getDeposit(double );
 
 int main()
 	{
 		char selection;
-		double balance;
-
+		double balance,withdrawal;
+		
+		displayMenu();
+		
 		do
 			{
-				displayMenu();
 
-				scanf("%c",&selection);
+				scanf("\n%c",&selection);
 
 				switch(selection)
 					{
 					case 'D':case 'd':
-						clrscr();
 						balance=getDeposit(balance);
+						displayMenu();
 					break;
 					case 'W':case 'w':
-						clrscr();
-						balance=balance-getWithdrawal(balance);
+                         balance=getWithdrawal(balance);
+                         displayMenu();
 					break;
 					case 'B':case 'b':
-						clrscr();
-						printf("Your current balance is: $%.2lf",balance);
+						getBalance(balance);
+						displayMenu();
 					break;
 					case 'Q':case 'q':
-						printf("Thank you, come again");
+						printf("\nThank you, come again");
 					break;
 					default :
-						printf("Please make a valid selection");
+						printf("\nPlease make a valid selection\n\n");
+						displayMenu();
 					}
 
 			}while(selection!='Q'||selection!='q');
@@ -57,16 +61,35 @@ void displayMenu()
 		printf("\nQ:\tTo quit");
 		printf("\n\nPlease enter your selection now:");
 	}
-double getBalance(double balance)
-    {
-
-     return 0;
-    }
+void getBalance(double current)
+	{
+		printf("Your current balance is $%.2lf",current);
+	}
 double getDeposit(double balance)
-    {
-    return 0;
-    }
+	{
+		double deposit;
+		
+		printf("enter your deposit amount");
+		scanf("%lf",&deposit);
+		balance=balance+deposit;
+		
+		return(balance);
+	}
 double getWithdrawal(double balance)
-    {
-    return 0;
-    }
+	{
+		double withdrawal;
+	
+		printf("Enter withdrawal amount");
+		scanf("%lf",&withdrawal);
+	
+		if(balance>=withdrawal)
+			{
+				balance=balance-withdrawal;
+			}
+		else
+			{
+				printf("you do not have sufficient funds to make this withdrawal, please try again");
+			}
+			
+		return(balance);
+	}
