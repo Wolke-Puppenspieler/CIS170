@@ -41,7 +41,7 @@ int main()
 						printf("\nThank you, come again");
 					break;
 					default :
-						printf("\nPlease make a valid selection\n\n");
+						printf("\nPlease make a valid selection from the following menu:\n");
 						displayMenu();
 					}
 
