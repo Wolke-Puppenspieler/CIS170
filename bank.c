@@ -61,10 +61,12 @@ void displayMenu()
 		printf("\nQ:\tTo quit");
 		printf("\n\nPlease enter your selection now:");
 	}
+	
 void getBalance(double current)
 	{
 		printf("Your current balance is $%.2lf",current);
 	}
+	
 double getDeposit(double balance)
 	{
 		double deposit;
@@ -75,6 +77,7 @@ double getDeposit(double balance)
 		
 		return(balance);
 	}
+	
 double getWithdrawal(double balance)
 	{
 		double withdrawal;
