@@ -1,0 +1,2 @@
+strings
+	array of characters terminated with the null character '\0' 

@@ -1,0 +1,28 @@
+char myString[20]; //-> creates pointer constant starting point: A2
+char *yourString; //
+char myString[20]="Hello" //-> string initialized as H/e/l/l/o/\0
+printf("%c",myString[1]); //-> prints "e"
+
+yourString=myString; //assigns A2 to yourString pointer4
+printf("%c",yourString[1]); // subscript notation
+printf("%c",*(myString+1)); // pointer notation
+
+printf("%s", myString);
+printf("%s, yourString);
+myString="goodbye"; //BAD cannot do!
+yourString="goodbye"; //assigns goodbye to new section of ram and changes value of pointer yourString
+yourString="See Ya"; //finds another momery location and assigns see ya to it loses previous address and data without releasing it. (causes memory leaks)
+
+char *greetings[4]; //creates array of pointers, allows managing several strings without causing memory leaks
+
+int temp[5]={70, 65, 37. 42, 76};
+int tempPtr;
+tempPtr=temp;
+for(i=0;i<5;++i)
+	{
+	printf("%d", temp[i]); //can replace temp[i] with tempPtr[i], or, *(temp+i), or *(tempPtr+i) or *temp++
+	
+
+
+
+

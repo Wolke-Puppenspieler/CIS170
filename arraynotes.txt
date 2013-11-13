@@ -1,0 +1,16 @@
+arrays
+
+int main()
+	{
+		float prices[5];
+		
+		for(i=0;i<5;++i)
+		{
+			printf("enter a price");
+			scanf("%f",&prices[i]);
+		}
+		for(i=0;i<5;++i)
+		{
+		printf("%f",prices[i]);
+		}
+		

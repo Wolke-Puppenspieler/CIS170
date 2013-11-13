@@ -1,0 +1,5 @@
+/* Statistical Analysis
+CIS 170 Section 01
+Justin Newman*/
+
+#include<stdio.h>

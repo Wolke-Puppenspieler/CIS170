@@ -3,8 +3,6 @@ CIS170 Section 01
 Bank Program*/
 
 #include<stdio.h>
-#include <conio2.h>
-#include <conio.h>
 
 void displayMenu();
 void getBalance(double );
@@ -26,21 +24,26 @@ int main()
 				switch(selection)
 					{
 					case 'D':case 'd':
+						system("cls");
 						balance=getDeposit(balance);
 						displayMenu();
 					break;
 					case 'W':case 'w':
-                         balance=getWithdrawal(balance);
-                         displayMenu();
+						system("cls");
+                        balance=getWithdrawal(balance);
+                        displayMenu();
 					break;
 					case 'B':case 'b':
+						system("cls");
 						getBalance(balance);
 						displayMenu();
 					break;
 					case 'Q':case 'q':
+						system("cls");
 						printf("\nThank you, come again");
 					break;
 					default :
+						system("cls");
 						printf("\nPlease make a valid selection from the following menu:\n");
 						displayMenu();
 					}
@@ -64,7 +67,7 @@ void displayMenu()
 	
 void getBalance(double current)
 	{
-		printf("Your current balance is $%.2lf",current);
+		printf("\nYour current balance is $%.2lf\n",current);
 	}
 	
 double getDeposit(double balance)
@@ -81,17 +84,26 @@ double getDeposit(double balance)
 double getWithdrawal(double balance)
 	{
 		double withdrawal;
-	
-		printf("Enter withdrawal amount");
+		
+		printf("Enter a new withdrawal amount");
 		scanf("%lf",&withdrawal);
-	
+		
 		if(balance>=withdrawal)
 			{
 				balance=balance-withdrawal;
 			}
 		else
 			{
-				printf("you do not have sufficient funds to make this withdrawal, please try again");
+				do
+				{
+			
+				printf("\nyou do not have sufficient funds to make this withdrawal, please try again\n");
+				printf("Enter a new withdrawal amount");
+				scanf("%lf",&withdrawal);
+				
+				}while(withdrawal>balance);
+				
+				balance=balance-withdrawal;
 			}
 			
 		return(balance);
