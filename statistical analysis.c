@@ -7,7 +7,7 @@ Justin Newman*/
 void getData(int []);
 void sortData(int []);
 void calcStats(int []);
-void displayStats(float ,float
+void displayStats(int [],
 //main function
 int main()
 	{
@@ -73,7 +73,15 @@ void calcStats(int nums[MAX], float *median, float *mode, float *avg, float *ran
 	{
 		int i=0;
 		float min=0, max=0, temp, tot=0;
-		for(
+		for(i=0;i<9;i++)
+			{
+				if(*max<=nums[i])
+				{*max=nums[i];}
+				if(*min>=nums[i])
+				{*min=nums[i];)
+				*tot=tot+nums[i];
+			}
+		*range=(*max-*min);
 	
 		
 	}
