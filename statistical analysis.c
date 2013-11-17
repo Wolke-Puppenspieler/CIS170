@@ -12,8 +12,9 @@ void displayStats(float ,float
 int main()
 	{
 		int nums[MAX];
-		float median, mode, mean, range;
+		float median, mode, average, range;
 		int i=0;
+		
 		getData(nums);
 		
 		for(i=0;i<9;++i)
@@ -21,16 +22,19 @@ int main()
 				printf("\n%d", nums[i]);
 				
 			}
+		
 		sortData(nums);
+		
 		printf("\n\n");
+		
 		for(i=0;i<9;++i)
 			{
 				printf("\n%d", nums[i]);
 				
 			}
-			
-		
-			getch();
+				
+		calcStats(nums, &median, &mode, &average, &range);
+		getch();
 		return 0;
 	}
 	
@@ -65,8 +69,12 @@ void sortData(int nums[MAX])
 			}
 	}
 //calculate statistics
-void calcStats(int nums[MAX])
+void calcStats(int nums[MAX], float *median, float *mode, float *avg, float *range)
 	{
-		f
+		int i=0;
+		float min=0, max=0, temp, tot=0;
+		for(
+	
+		
 	}
 		
