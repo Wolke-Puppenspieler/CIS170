@@ -1,4 +1,4 @@
-/* Statistical Analysis
+a/* Statistical Analysis
 CIS 170 Section 01
 Justin Newman*/
 
@@ -83,8 +83,8 @@ void calcStats(int nums[MAX], float *median, float *mode, float *avg, int *range
 				{min=nums[i];}
 				tot=tot+nums[i];
 			}
-		*range=(max-min);
-		*avg=tot/MAX;
+		*range=max-min;
+		*avg=tot/10.0;
 	
 		
 	}
