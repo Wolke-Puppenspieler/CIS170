@@ -1,4 +1,4 @@
-a/* Statistical Analysis
+/* Statistical Analysis
 CIS 170 Section 01
 Justin Newman*/
 
@@ -6,6 +6,8 @@ Justin Newman*/
 #define MAX 10
 void getData(int []);
 void sortData(int []);
+void calcStats(int [], float *, float *, float *, int *);
+void displayStats(int [], float *, float *, float *, int *);
 
 //main function
 int main()
@@ -31,7 +33,8 @@ int main()
 				printf("\n%d", nums[i]);
 				
 			}
-
+		calcStats(nums, &median, &mode, &average, &range);
+		printf("%d, %.2f,", range, average);
 		
 
 		
@@ -69,4 +72,20 @@ void sortData(int nums[MAX])
 					}
 			}
 	}
-
+//calculate statistics
+void calcStats(int nums[MAX], float *median, float *mode, float *avg, int *range)
+	{
+		int i=0, min=0, max=0, temp, tot=0;
+		for(i=0;i<9;++i)
+			{
+				if(max<=nums[i])
+				{max=nums[i];}
+				if(min>=nums[i])
+				{min=nums[i];}
+				tot=tot+nums[i];
+			}
+		*range=(max-min);
+		*avg=tot/10.0;
+	
+		
+	}
