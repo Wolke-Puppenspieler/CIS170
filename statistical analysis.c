@@ -18,7 +18,7 @@ int main()
 		
 		getData(nums);
 		
-		for(i=0;i<9;++i)
+		for(i=0;i<MAX;++i)
 			{
 				printf("\n%d", nums[i]);
 				
@@ -28,13 +28,13 @@ int main()
 		
 		printf("\n\n");
 		
-		for(i=0;i<9;++i)
+		for(i=0;i<MAX;++i)
 			{
 				printf("\n%d", nums[i]);
 				
 			}
 		calcStats(nums, &median, &mode, &average, &range);
-		printf("%d, %.2f,", range, average);
+		printf("\n\n%d, %.2f, %.2f", range, average, median);
 		
 
 		
@@ -46,7 +46,7 @@ int main()
 void getData(int nums[MAX])
 	{
 		int i=0;
-		for(i=0;i<9;++i)
+		for(i=0;i<MAX;++i)
 			{
 				printf("enter a number");
 				scanf("%d",&nums[i]);
@@ -59,9 +59,9 @@ void sortData(int nums[MAX])
 		int temp;
 		int i, j;
 	
-		for(i=0;i<9;++i)
+		for(i=0;i<MAX;++i)
 			{
-				for(j=i+1;j<9;++j)
+				for(j=i+1;j<MAX;++j)
 					{
 						if(nums[i]>nums[j])
 							{
@@ -76,7 +76,7 @@ void sortData(int nums[MAX])
 void calcStats(int nums[MAX], float *median, float *mode, float *avg, int *range)
 	{
 		int i=0, min=0, max=0, temp, tot=0;
-		for(i=0;i<9;++i)
+		for(i=0;i<MAX;++i)
 			{
 				if(max<=nums[i])
 				{max=nums[i];}
@@ -86,6 +86,7 @@ void calcStats(int nums[MAX], float *median, float *mode, float *avg, int *range
 			}
 		*range=(max-min);
 		*avg=tot/10.0;
-	
+		tot=0;
+		*median=((nums[4]+nums[5])/2.0);
 		
 	}
