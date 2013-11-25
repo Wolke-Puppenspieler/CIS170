@@ -10,7 +10,7 @@ struct Employee
 	{
 		char name[50];
 		int id;
-		Date hire;
+		struct Date hire;
 	};
 	
 int main()
