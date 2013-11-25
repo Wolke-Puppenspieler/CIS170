@@ -7,7 +7,7 @@ Justin Newman*/
 void getData(int []);
 void sortData(int []);
 void calcStats(int [], float *, float *, float *, int *);
-void displayStats(int [], float *, float *, float *, int *);
+void displayStats(int ,float ,float ,float );
 
 //main function
 int main()
@@ -34,9 +34,9 @@ int main()
 				
 			}
 		calcStats(nums, &median, &mode, &average, &range);
-		printf("\n\n%d, %.2f, %.2f", range, average, median);
 		
-
+		
+		displayStats(range, average, median, mode);
 		
 		getch();
 		return 0;
@@ -75,18 +75,31 @@ void sortData(int nums[MAX])
 //calculate statistics
 void calcStats(int nums[MAX], float *median, float *mode, float *avg, int *range)
 	{
-		int i=0, min=0, max=0, temp, tot=0;
-		for(i=0;i<MAX;++i)
-			{
-				if(max<=nums[i])
-				{max=nums[i];}
-				if(min>=nums[i])
-				{min=nums[i];}
-				tot=tot+nums[i];
-			}
-		*range=(max-min);
-		*avg=tot/10.0;
+		int i=0, min=0, max=0, temp, tot=0, graf, derGraf=0, c, j=0;
+	
+		*range=(nums[9]-nums[0]);
+		
 		tot=0;
 		*median=((nums[4]+nums[5])/2.0);
-		
+		for(i=0;i<MAX;++i)
+			{
+				graf=1;
+				for(j=i+1;j<MAX;++j)
+					{
+						tot=tot+nums[i];
+						if(nums[i]==nums[j])
+							{graf=graf+1;}
+						if(graf>derGraf)
+							{derGraf=graf;
+							c=i;}
+					}
+			}
+		*avg=tot/10.0;	
+		*mode=nums[c];
+				
+	}
+	
+void displayStats(int range, float average, float median, float mode)
+	{
+		printf("\n\nThe range, average, median, and mode are: %d, %.2f, %.2f, %.2f", range, average, median, mode);
 	}
