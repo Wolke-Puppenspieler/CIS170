@@ -17,7 +17,6 @@ int main()
 		getInfo(&fuelType, &gallons, &carWash);
 		getGasRate(&fuelType, gasPricesPtr, &fuelRate);
 		printf("%.3f",fuelRate);
-		
 	return 0;
 	
 	}

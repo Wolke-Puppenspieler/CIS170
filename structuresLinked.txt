@@ -1,0 +1,8 @@
+struct Movie
+{
+	char yourName[30];
+	char name[80];
+	char description[255];
+	char rating[6];
+	Movie *next;
+};
