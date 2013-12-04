@@ -3,7 +3,7 @@ CIS 170 Section 01
 Justin Newman*/
 
 #include<stdio.h>
-#define MAX 5
+#define MAX 10
 void getData(int []);
 void sortData(int []);
 void calcStats(int [], float *, float *, float *, int *);
@@ -77,10 +77,10 @@ void calcStats(int nums[MAX], float *median, float *mode, float *avg, int *range
 	{
 		int i=0, min=0, max=0, temp, tot=0, graf, derGraf=0, c, j=0;
 	
-		*range=(nums[MAX-1]-nums[0]);
+		*range=(nums[9]-nums[0]);
 		
 		tot=0;
-		*median=((nums[(MAX/2-1)]+nums[MAX/2])/2.0);
+		*median=((nums[4]+nums[5])/2.0);
 		for(i=0;i<MAX;++i)
 			{
 				graf=1;
@@ -94,7 +94,7 @@ void calcStats(int nums[MAX], float *median, float *mode, float *avg, int *range
 							c=i;}
 					}
 			}
-		*avg=tot/MAX;	
+		*avg=tot/10.0;	
 		*mode=nums[c];
 				
 	}
