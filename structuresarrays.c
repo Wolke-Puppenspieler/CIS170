@@ -6,8 +6,8 @@ Justin Newman*/
 
 struct Student
 	{
-		long int studentId;
-		char studentName[26];
+		long int id;
+		char name[81];
 		int credits;
 		float gpa;
 		int gradM;
@@ -16,18 +16,25 @@ struct Student
 
 int main()
 	{
-		struct Student studentA;
+		struct Student studenta;
+		
 		printf("Enter the student's id #");
-		scanf("%ld", &studentA.studentId);
+		scanf("%ld", &studenta.id);
 		printf("Enter the student's name");
-		fgets(studentA.studentName);
+		scanf("\n");
+		gets(studenta.name);
 		printf("Enter the student's # of credits");
-		scanf("%d", &studentA.credits);
+		scanf("%d", &studenta.credits);
 		printf("Enter the student's gpa");
-		scanf("%f", &studentA.gpa);
+		scanf("%f", &studenta.gpa);
 		printf("Enter the student's graduation month");
-		scanf("%ld", &studentA.gradM);
+		scanf("%ld", &studenta.gradM);
 		printf("Enter the student's graduation yr");
-		scanf("%ld", &studentA.gradY);
+		scanf("%ld", &studenta.gradY);
+		
+		
+		
+		printf("\n%ld",studenta.id);
+		
 	return 0;
 	}
