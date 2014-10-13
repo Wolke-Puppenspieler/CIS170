@@ -28,13 +28,18 @@ int main()
 		printf("Enter the student's gpa");
 		scanf("%f", &studenta.gpa);
 		printf("Enter the student's graduation month");
-		scanf("%ld", &studenta.gradM);
+		scanf("%d", &studenta.gradM);
 		printf("Enter the student's graduation yr");
-		scanf("%ld", &studenta.gradY);
+		scanf("%d", &studenta.gradY);
 		
 		
 		
 		printf("\n%ld",studenta.id);
+		printf("\n%s",studenta.name);
+		printf("\n%d",studenta.credits);
+		printf("\n%.3f",studenta.gpa);
+		printf("\n%d",studenta.gradM);
+		printf("\n%d",studenta.gradY);
 		
 	return 0;
 	}
